@@ -1,9 +1,9 @@
-node-xml2js
+node-xml2js-expat
 ===========
 
 Description
 -----------
-Simple XML to JavaScript object converter.  Uses [sax-js](http://github.com/isaacs/sax-js/).  Install with [npm](http://github.com/isaacs/npm) :)
+Simple XML to JavaScript object converter.  Uses [node-expat](https://github.com/astro/node-expat).  Install with [npm](http://github.com/isaacs/npm) :)
 See the tests for examples until docs are written.
 Note:  If you're looking for a full DOM parser, you probably want [JSDom](http://github.com/tmpvar/jsdom).
 
@@ -22,4 +22,3 @@ Simple usage
     fs.readFile(__dirname + '/foo.xml', function(err, data) {
         parser.parseString(data);
     });
-

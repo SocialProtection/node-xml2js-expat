@@ -1,9 +1,24 @@
 {
-  "name": "xml2js",
-  "description": "Simple XML to JavaScript object converter.",
-  "version": "0.1.5",
-  "author": "maqr <maqr.lollerskates@gmail.com>",
-  "keywords": ["xml", "json"],
+  "name": "xml2js-expat",
+  "version": "0.1.0",
+  "description": "Simple XML to JavaScript object converter that uses Expat, a fast XML parser.",
+  "homepage" : "https://github.com/Poetro/node-xml2js",
+  "author": {
+    "name" : "Peter Galiba (Poetro)",
+    "email": "poetro@gmail.com>",
+    "url"  : "http://poetro.hu/"
+  },
+  "contributors" : [
+    {
+      "name" : "maqr",
+      "email": "maqr.lollerskates@gmail.com"
+    }
+  ],
+  "keywords": ["xml", "json", "expat"],
   "directories": { "lib": "./lib" },
-  "dependencies" : { "sax" : ">=0.1.1" }
+  "dependencies" : { "node-expat" : ">=1.0.0" },
+  "repository" : {
+    "type": "git",
+    "url" : "https://Poetro@github.com/Poetro/node-xml2js.git"
+  }
 }
