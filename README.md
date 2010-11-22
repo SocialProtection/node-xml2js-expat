@@ -15,10 +15,20 @@ Simple usage
         xml2js = require('xml2js-expat');
 
     var parser = new xml2js.Parser();
-    parser.addListener('end', function(result) {
-        console.log(sys.inspect(result));
+    parser.addListener('end', function(result, error) {
+        if (!error) {
+            console.log(sys.inspect(result));
+        }
+        else {
+            console.error(error);
+        }
         console.log('Done.');
     });
     fs.readFile(__dirname + '/foo.xml', function(err, data) {
-        parser.parseString(data);
+        if (parser.parseString(data)) {
+          console.log('xml2js: successfully parsed file.');
+        }
+        else {
+          console.error('xml2js: parse error: "%s"', parser.getError());
+        }
     });
