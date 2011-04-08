@@ -14,8 +14,7 @@ Simple usage
         fs = require('fs'),
         xml2js = require('xml2js-expat');
 
-    var parser = new xml2js.Parser();
-    parser.addListener('end', function(result, error) {
+    var parser = new xml2js.Parser(function(result, error) {
         if (!error) {
             console.log(sys.inspect(result));
         }
@@ -32,3 +31,25 @@ Simple usage
           console.error('xml2js: parse error: "%s"', parser.getError());
         }
     });
+
+The Parser object has an event, that can be suscribed to with
+
+    parser.on('end', function (result, error) {});
+    // or
+    parser.addListener('end', function (result, error) {});
+
+The Parser object supports the following encodings, that can be specified as the first parameter, in which case the callback should be the second. (Each argument is optional.)
+
+  - `UTF-8`
+  - `UTF-16`
+  - `ISO-8859-1`
+  - `US-ASCII`
+
+For example:
+
+    var parser = new xml2js.Parser('UTF-8', function(result, error) {});
+
+or
+
+    var parser = new xml2js.Parser('UTF-8');
+    parser.on('end', function (result, error) {});
