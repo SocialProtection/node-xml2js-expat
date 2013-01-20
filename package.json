@@ -17,7 +17,7 @@
   ],
   "keywords": ["xml", "json", "expat"],
   "directories": { "lib": "./lib" },
-  "dependencies" : { "node-expat" : ">=1.6.1" },
+  "dependencies" : { "node-expat" : "1.6.1" },
   "repository" : {
     "type": "git",
     "url" : "https://Poetro@github.com/Poetro/node-xml2js-expat.git"
